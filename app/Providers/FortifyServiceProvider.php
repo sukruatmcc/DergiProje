@@ -33,11 +33,11 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
 
         Fortify::loginView(function(){
-            return "login";
+            return view("auth.login");
         });
 
         Fortify::registerView(function(){
-            return "register";
+            return view("auth.register");
         });
 
         RateLimiter::for('login', function (Request $request) {

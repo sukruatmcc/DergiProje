@@ -19,3 +19,8 @@ Route::get('/', function () {
 });
 
 Route::get('/admin-panel',[AdminController::class,'index'])->name("admin.index");
+
+Route::get('/home', function () {
+    dd(Auth::user());
+});
+
