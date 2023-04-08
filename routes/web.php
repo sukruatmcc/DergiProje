@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 
 
-Route::prefix('home')->middleware('auth')->group(function(){
-    Route::get('/admin',[AdminController::class,'index'])->name("admin.index");
+Route::prefix('admin-panel')->middleware('auth')->group(function(){
+    Route::get('/',[AdminController::class,'index'])->name("admin.index");
 });
 
