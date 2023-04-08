@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin-panel',[AdminController::class,'index'])->name("admin.index");
 
-Route::get('/home', function () {
-    dd(Auth::user());
+
+Route::prefix('home')->middleware('auth')->group(function(){
+    Route::get('/admin',[AdminController::class,'index'])->name("admin.index");
 });
 

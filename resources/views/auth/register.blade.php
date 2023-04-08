@@ -91,7 +91,8 @@
                                             </div>
                                         </div>
                                         <!-- Form Group (create account submit)-->
-                                        <button type="submit" class="btn btn-primary">Add</button>
+                                        <button class="btn btn-primary btn-block" href="auth-login-basic.html">Create
+                                            Account</button>
                                     </form>
                                 </div>
                                 <div class="card-footer text-center">
