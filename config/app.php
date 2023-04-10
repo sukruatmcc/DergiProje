@@ -195,6 +195,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         \App\Providers\FortifyServiceProvider::class,//fortify
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,//log
 
     ],
 

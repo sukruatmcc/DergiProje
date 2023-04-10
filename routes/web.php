@@ -22,5 +22,6 @@ Route::get('/', function () {
 
 Route::prefix('admin-panel')->middleware('auth')->group(function(){
     Route::get('/',[AdminController::class,'index'])->name("admin.index");
+    Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 });
 
