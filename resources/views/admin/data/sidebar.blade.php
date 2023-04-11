@@ -23,7 +23,7 @@
                     <!-- Sidenav Menu Heading (Core)-->
                     <div class="sidenav-menu-heading">Dergi Management</div>
                     <!-- Sidenav Accordion (Dashboard)-->
-                    <a class="nav-link collapsed" href="{{ route('dergi.index') }}" data-bs-toggle="collapse"
+                    <a class="nav-link collapsed" href="{{ route('admin.index') }}" data-bs-toggle="collapse"
                         data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                         <div class="nav-link-icon"><i data-feather="activity"></i></div>
                         Dergiler
