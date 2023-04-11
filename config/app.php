@@ -196,6 +196,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         \App\Providers\FortifyServiceProvider::class,//fortify
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,//log
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,//sweetalert
 
     ],
 
@@ -212,6 +213,7 @@ return [
 
     'aliases' => Facade::defaultAliases()->merge([
         // 'ExampleClass' => App\Example\ExampleClass::class,
+         'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
     ])->toArray(),
 
 ];

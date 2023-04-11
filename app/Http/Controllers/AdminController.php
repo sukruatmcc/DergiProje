@@ -8,6 +8,6 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view("admin.layout.index");
+        return view("admin.layout.dergi.index");//dergi all
     }
 }
