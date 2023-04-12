@@ -25,15 +25,14 @@
                     <!-- Sidenav Accordion (Dashboard)-->
                     <a class="nav-link collapsed" href="{{ route('admin.index') }}" data-bs-toggle="collapse"
                         data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                        <div class="nav-link-icon"><i data-feather="activity"></i></div>
+                        <div class="nav-link-icon"><i class="fas fa-newspaper"></i></div>
                         Dergiler
                     </a>
-                    <!-- Sidenav Footer-->
-                    <div class="sidenav-footer">
-                        <div class="sidenav-footer-content">
-                            <div class="sidenav-footer-subtitle">Logged in as:</div>
-                            <div class="sidenav-footer-title">Valerie Luna</div>
-                        </div>
-                    </div>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                        data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                        <div class="nav-link-icon"><i class="fa fa-users" aria-hidden="true"></i></div>
+                        Kullanıcılar
+                    </a>
+
         </nav>
     </div>

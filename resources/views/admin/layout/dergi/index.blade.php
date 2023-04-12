@@ -24,20 +24,19 @@
         <!-- Main page content-->
         <div class="container-xl px-4 mt-n10">
             <div class="card mb-4">
-                <div class="row">
+                <div class="row" style="margin-top:7px; margin-left:7px">
                     <div class="col-md-4">
-                        <button onclick="dergimodal(0)" type="button" class="btn btn-primary" data-toggle="modal"
-                            data-target="#dergi-modal">
-                            <i class="fa-solid fa-circle-plus"></i> Ekle
-                        </button>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalCreate"><i
+                                class="fa-solid fa-circle-plus"></i>Add<a>
                     </div>
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Name</th>
-                                <th>info</th>
+                                <th>Info</th>
                                 <th>Number</th>
                                 <th>Status</th>
                                 <th>Actions</th>
@@ -45,6 +44,7 @@
                         </thead>
                         <tfoot>
                             <tr>
+                                <th>#</th>
                                 <th>Name</th>
                                 <th>info</th>
                                 <th>Number</th>
@@ -53,32 +53,51 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
-                                <td>Edinburgh</td>
-                                <td>
-                                    <div class="badge bg-primary text-white rounded-pill">Full-time</div>
-                                </td>
-                                <td>
-                                    <button style="color:blue; background:none; border:none;" type="button"
-                                        class="delete"><i class="fa fa-trash text-danger"></i></button>
-                                    <a href=""><i class="fa fa-edit"></i></a>
-                                </td>
-                                </td>
-                            </tr>
+                            @foreach ($data as $row)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $row->dergi_name }}</td>
+                                    <td>{{ $row->dergi_info }}</td>
+                                    <td>{{ $row->dergi_number }}</td>
+                                    <td>
+                                        @if ($row->status == 'Active')
+                                            <button data-action="{{ route('admin.dergi.changeStatus', $row->id) }}"
+                                                data-id="{{ $row->id }}" href="javascript:void(0)"
+                                                class="btn btn-success btn-sm  changeStatus">Active</button>
+                                        @else
+                                            <button data-action="{{ route('admin.dergi.changeStatus', $row->id) }}"
+                                                data-id="{{ $row->id }}" href="javascript:void(0)"
+                                                class="btn btn-danger btn-sm changeStatus">Passive</button>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        <button style="color:blue; background:none; border:none;" type="button"
+                                            data-action="{{ route('AdminDergi.destroy', $row->id) }}"
+                                            data-id="{{ $row->id }}" class="delete"><i
+                                                class="fa fa-trash text-danger"></i></button>
+                                        <a href="{{ route('AdminDergi.edit', $row->id) }}"><i class="fa fa-edit"></i></a>
+                                        <a href="#"><i class="fa-solid fa-eye"></i></a>
+                                    </td>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
+
     </main>
+    @include('admin.layout.dergi.create')
 @endsection
 @section('js')
+    <script src="/admin/admin.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
+        //  $(document).ready(function() {
+        //   $(".delete").click(function() {
+        //       alert();
+        //   });
+        //  });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>

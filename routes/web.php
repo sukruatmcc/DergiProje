@@ -24,8 +24,9 @@ Route::get('/', function () {
 Route::prefix('admin-panel')->middleware('auth')->group(function(){
     Route::get('/',[AdminController::class,'index'])->name("admin.index");
     Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
-
     //Dergi
-    //Route::get('all-dergi',[DergiController::class,'index'])->name('dergi.index');
+    Route::resource('AdminDergi',DergiController::class);
+    Route::post('/dergi/edit/{id}',[DergiController::class,'update'])->name('admin.dergi.update');
+    Route::post('/dergi/changeStatus',[DergiController::class,'changeStatus'])->name('admin.dergi.changeStatus');
 });
 
