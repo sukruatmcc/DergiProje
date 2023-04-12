@@ -17,6 +17,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
+    <link rel="stytlesheet" href="{{ asset('dist/assetssweet-alert/sweetalert2.css') }}">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     @yield('css')
 </head>
@@ -39,7 +40,8 @@
     <script src="{{ asset('admin/dist/js/datatables/simple-datatables-latest.js') }}" crossorigin="anonymous"></script>
     <script src="{{ asset('admin/dist/js/datatables/datatables-simple-demo.js') }}"></script>
     <script src="{{ asset('admin') }}/admin.js"></script>
-    <script src="{{ asset('dist/sweet-alert/sweetalert2.all.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/admin/admin.js"></script>
     @include('sweetalert::alert')
     @yield('js')
 </body>

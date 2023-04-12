@@ -28,6 +28,16 @@
                         <div class="nav-link-icon"><i class="fas fa-newspaper"></i></div>
                         Dergiler
                     </a>
+                    <a class="nav-link collapsed" href="{{ route('AdminFirma.index') }}"
+                        aria-controls="collapseDashboards">
+                        <div class="nav-link-icon"><i class="fa-solid fa-landmark"></i></div>
+                        Firmalar
+                    </a>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
+                        data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                        <div class="nav-link-icon"><i class="fas fa-list-alt"></i></div>
+                        Categories
+                    </a>
                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
                         data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
                         <div class="nav-link-icon"><i class="fa fa-users" aria-hidden="true"></i></div>

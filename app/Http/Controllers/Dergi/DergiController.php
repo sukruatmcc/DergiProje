@@ -89,6 +89,6 @@ class DergiController extends Controller
     public function destroy(string $id)
     {
       Dergi::find($id)->delete();
-      return response()->json(['message' => "Education Information Deleted" , "status" => "Success"]);
+      return response()->json(['message' => "Dergi Information Deleted" , "status" => "Success"]);
     }
 }
