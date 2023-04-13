@@ -57,7 +57,8 @@ class CategoriesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Categories::find($id);
+        return view('admin.layout.categories.edit',compact('data'));
     }
 
     /**
@@ -65,7 +66,12 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        Categories::find($id)->update([
+            "categeri_name" => $request->categeri_name,
+            "categeri_color" => $request->categeri_color,
+        ]);
+        alert()->success('Success','Updated Categories Information')->showConfirmButton('Okey', '#3085d6')->persistent(true,true);
+        return redirect()->route("AdminCategories.index");
     }
 
     /**

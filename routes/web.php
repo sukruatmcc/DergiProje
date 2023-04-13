@@ -37,5 +37,6 @@ Route::prefix('admin-panel')->middleware('auth')->group(function(){
 
     //Categories
     Route::resource('AdminCategories',CategoriesController::class);
+    Route::post('/category/edit/{id}',[FirmaController::class,'update'])->name('admin.categories.update');
 });
 

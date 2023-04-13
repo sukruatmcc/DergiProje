@@ -69,7 +69,8 @@
                                         <button style="color:blue; background:none; border:none;" type="button"
                                             class="delete" data-action="{{ route('AdminCategories.destroy', $row->id) }}"
                                             data-id="{{ $row->id }}"><i class="fa fa-trash text-danger"></i></button>
-                                        <a href="{{ route('AdminFirma.edit', $row->id) }}"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ route('AdminCategories.edit', $row->id) }}"><i
+                                                class="fa fa-edit"></i></a>
                                     </td>
                                     </td>
                                 </tr>
