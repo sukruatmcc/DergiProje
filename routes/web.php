@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Dergi\DergiController;
 use App\Http\Controllers\Firma\FirmaController;
 use App\Http\Controllers\Categories\CategoriesController;
+use App\Http\Controllers\Users\UsersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,5 +39,8 @@ Route::prefix('admin-panel')->middleware('auth')->group(function(){
     //Categories
     Route::resource('AdminCategories',CategoriesController::class);
     Route::post('/category/edit/{id}',[FirmaController::class,'update'])->name('admin.categories.update');
+
+    //Users
+    Route::resource('AdminUsers',UsersController::class);
 });
 

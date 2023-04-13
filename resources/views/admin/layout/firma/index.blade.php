@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <table id="datatablesSimple1">
+                    <table id="datatablesSimple2">
                         <thead>
                             <tr>
                                 <th>#</th>

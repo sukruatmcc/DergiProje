@@ -38,9 +38,9 @@
                         <div class="nav-link-icon"><i class="fas fa-list-alt"></i></div>
                         Categories
                     </a>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                        data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
-                        <div class="nav-link-icon"><i class="fa fa-users" aria-hidden="true"></i></div>
+                    <a class="nav-link collapsed" href="{{ route('AdminUsers.index') }}" aria-expanded="false"
+                        aria-controls="collapseDashboards">
+                        <div class="nav-link-icon"><i class="fas fa-list-alt"></i></div>
                         Kullanıcılar
                     </a>
 

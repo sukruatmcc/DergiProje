@@ -22,6 +22,11 @@ window.addEventListener('DOMContentLoaded', event => {
         new simpleDatatables.DataTable(datatablesSimple3);
     }
 
+    const datatablesSimple4 = document.getElementById('datatablesSimple4');
+    if (datatablesSimple3) {
+        new simpleDatatables.DataTable(datatablesSimple3);
+    }
+
 
 
 
