@@ -14,7 +14,7 @@
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                Dergi
+                                Dergiler
                             </h1>
                         </div>
                     </div>
@@ -26,8 +26,8 @@
             <div class="card mb-4">
                 <div class="row" style="margin-top:7px; margin-left:7px">
                     <div class="col-md-4">
-                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalCreate"><i
-                                class="fa-solid fa-circle-plus"></i>Add<a>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#ModalCreateDergi"><i class="fa-solid fa-circle-plus"></i>Add Dergi<a>
                     </div>
                 </div>
                 <div class="card-body">

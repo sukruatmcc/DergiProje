@@ -23,8 +23,8 @@
                     <!-- Sidenav Menu Heading (Core)-->
                     <div class="sidenav-menu-heading">Dergi Management</div>
                     <!-- Sidenav Accordion (Dashboard)-->
-                    <a class="nav-link collapsed" href="{{ route('admin.index') }}" data-bs-toggle="collapse"
-                        data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                    <a class="nav-link collapsed" href="{{ route('admin.index') }}" aria-expanded="false"
+                        aria-controls="collapseDashboards">
                         <div class="nav-link-icon"><i class="fas fa-newspaper"></i></div>
                         Dergiler
                     </a>
@@ -33,8 +33,8 @@
                         <div class="nav-link-icon"><i class="fa-solid fa-landmark"></i></div>
                         Firmalar
                     </a>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                        data-bs-target="#collapseDashboards" aria-expanded="false" aria-controls="collapseDashboards">
+                    <a class="nav-link collapsed" href="{{ route('AdminCategories.index') }}" aria-expanded="false"
+                        aria-controls="collapseDashboards">
                         <div class="nav-link-icon"><i class="fas fa-list-alt"></i></div>
                         Categories
                     </a>

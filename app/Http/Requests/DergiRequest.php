@@ -30,9 +30,9 @@ class DergiRequest extends FormRequest
     public function messages()//hataları özelleştirme
     {
         return [
-            "dergi_name.required" => "Education date required",
-            "dergi_name.max" => "Education date for can enter up to 255 characters",
-            "dergi_number.reuqired" => "University Department required",
+            "dergi_name.required" => "Dergi Name  required",
+            "dergi_name.max" => "Dergi Name for can enter up to 255 characters",
+            "dergi_number.reuqired" => "Dergi Number required",
         ];
     }
 }

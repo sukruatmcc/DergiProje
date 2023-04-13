@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Dergi\DergiController;
 use App\Http\Controllers\Firma\FirmaController;
-
+use App\Http\Controllers\Categories\CategoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,5 +33,9 @@ Route::prefix('admin-panel')->middleware('auth')->group(function(){
 
     //Firma
     Route::resource('AdminFirma',FirmaController::class);
+    Route::post('/firma/edit/{id}',[FirmaController::class,'update'])->name('admin.firma.update');
+
+    //Categories
+    Route::resource('AdminCategories',CategoriesController::class);
 });
 
