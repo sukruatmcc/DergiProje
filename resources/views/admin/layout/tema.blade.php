@@ -23,18 +23,18 @@
 </head>
 
 <body class="nav-fixed">
-    @include('admin.data.header')
-    @include('admin.data.sidebar')
+    @include('admin.layout.header')
+    @include('admin.layout.sidebar')
     <div id="layoutSidenav_content">
         @yield('content')
-        @include('admin.data.footer')
+        @include('admin.layout.footer')
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
     <script src="{{ asset('admin') }}/dist/js/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="js/datatables/datatables-simple-demo.js"></script>
+    <script src="{{ asset('admin') }}/dist/js/datatables/datatables-simple-demo.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <script src="{{ asset('admin/dist/js/datatables/simple-datatables-latest.js') }}" crossorigin="anonymous"></script>

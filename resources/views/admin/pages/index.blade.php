@@ -1,4 +1,4 @@
-@extends('admin.tema')
+@extends('admin.layout.tema')
 @section('title')
     Dergi | Admin Panel
 @endsection

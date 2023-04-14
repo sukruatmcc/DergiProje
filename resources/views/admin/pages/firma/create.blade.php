@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-xl-4">
                             <!-- Profile picture card-->
-                            <form action="{{ route('AdminFirma.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('adminfirma.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="card mb-4 mb-xl-0">
                                     <div class="card-header">Firma Logo</div>

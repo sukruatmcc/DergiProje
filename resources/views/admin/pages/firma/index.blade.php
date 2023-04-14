@@ -1,4 +1,4 @@
-@extends('admin.tema')
+@extends('admin.layout.tema')
 @section('title')
     Firma | Admin Panel
 @endsection
@@ -70,18 +70,18 @@
                                     <td>{{ $row->firma_gsm }}</td>
                                     <td>
                                         @if ($row->status == 'Active')
-                                            <button data-action="" data-id="" href="javascript:void(0)"
+                                            <button data-action="" data-id="{{ $row->id }}" href="javascript:void(0)"
                                                 class="btn btn-success btn-sm  changeStatus">Active</button>
                                         @else
-                                            <button data-action="" data-id="" href="javascript:void(0)"
+                                            <button data-action="" data-id="{{ $row->id }}" href="javascript:void(0)"
                                                 class="btn btn-danger btn-sm changeStatus">Passive</button>
                                         @endif
                                     </td>
                                     <td>
                                         <button style="color:blue; background:none; border:none;" type="button"
-                                            class="delete" data-action="{{ route('AdminFirma.destroy', $row->id) }}"
+                                            class="delete" data-action="{{ route('adminfirma.destroy', $row->id) }}"
                                             data-id="{{ $row->id }}"><i class="fa fa-trash text-danger"></i></button>
-                                        <a href="{{ route('AdminFirma.edit', $row->id) }}"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ route('adminfirma.edit', $row->id) }}"><i class="fa fa-edit"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -92,7 +92,7 @@
         </div>
 
     </main>
-    @include('admin.layout.firma.create')
+    @include('admin.pages.firma.create')
 @endsection
 @section('js')
     <script src="/admin/admin.js"></script>

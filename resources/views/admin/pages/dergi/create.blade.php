@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('AdminDergi.store') }}" method="POST">
+                <form action="{{ route('admindergi.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="dergi_name" class="col-form-label">Name:</label>

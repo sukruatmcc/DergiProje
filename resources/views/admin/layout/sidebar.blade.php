@@ -28,20 +28,26 @@
                         <div class="nav-link-icon"><i class="fas fa-newspaper"></i></div>
                         Dergiler
                     </a>
-                    <a class="nav-link collapsed" href="{{ route('AdminFirma.index') }}"
+                    <a class="nav-link collapsed" href="{{ route('adminfirma.index') }}"
                         aria-controls="collapseDashboards">
                         <div class="nav-link-icon"><i class="fa-solid fa-landmark"></i></div>
                         Firmalar
                     </a>
-                    <a class="nav-link collapsed" href="{{ route('AdminCategories.index') }}" aria-expanded="false"
+                    <a class="nav-link collapsed" href="{{ route('admincategories.index') }}" aria-expanded="false"
                         aria-controls="collapseDashboards">
                         <div class="nav-link-icon"><i class="fas fa-list-alt"></i></div>
                         Categories
                     </a>
-                    <a class="nav-link collapsed" href="{{ route('AdminUsers.index') }}" aria-expanded="false"
+                    <a class="nav-link collapsed" href="{{ route('adminusers.index') }}" aria-expanded="false"
                         aria-controls="collapseDashboards">
-                        <div class="nav-link-icon"><i class="fas fa-list-alt"></i></div>
+                        <div class="nav-link-icon"><i class="fa fa-users" aria-hidden="true"></i></div>
                         Kullanıcılar
+                    </a>
+
+                    <a class="nav-link collapsed" href="{{ route('adminreklam_type.index') }}" aria-expanded="false"
+                        aria-controls="collapseDashboards">
+                        <div class="nav-link-icon"><i class="fas fa-ad"></i></div>
+                        Reklam Types
                     </a>
 
         </nav>

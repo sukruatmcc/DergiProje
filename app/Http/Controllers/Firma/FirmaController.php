@@ -16,7 +16,15 @@ class FirmaController extends Controller
     public function index()
     {
         $data = Firma::all();
-        return view('admin.layout.firma.index',compact('data'));
+        return view('admin.pages.firma.index',compact('data'));
+    }
+
+    public function changeStatus(Request $request)
+    {
+       $update = Firma::find($request->id);
+       $update->status = $request->status;
+       $update->save();
+       return response()->json(['message' => "Firma Status Information Updated" , "status" => "Success"]);
     }
 
     /**

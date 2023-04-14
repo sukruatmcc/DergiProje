@@ -14,8 +14,16 @@ class CategoriesController extends Controller
     public function index()
     {
         $data = Categories::all();
-        return view('admin.layout.categories.index',compact('data'));
+        return view('admin.pages.categories.index',compact('data'));
     }
+
+     public function changeStatus(Request $request)
+     {
+        $update = Categories::find($request->id);
+        $update->status =  $request->status;
+        $update->save();
+        return response()->json(['message' => "Category Status Information Updated" , "status" => "Success"]);
+     }
 
     /**
      * Show the form for creating a new resource.
@@ -58,7 +66,7 @@ class CategoriesController extends Controller
     public function edit(string $id)
     {
         $data = Categories::find($id);
-        return view('admin.layout.categories.edit',compact('data'));
+        return view('admin.pages.categories.edit',compact('data'));
     }
 
     /**
@@ -79,6 +87,7 @@ class CategoriesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Categories::find($id)->delete();
+        return response()->json(['message' => "Firma Information Deleted" , "status" => "Success"]);
     }
 }

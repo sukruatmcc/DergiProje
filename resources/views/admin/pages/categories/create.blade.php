@@ -6,7 +6,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('AdminCategories.store') }}" method="POST">
+                <form action="{{ route('admincategories.store') }}" method="POST">
                     @csrf
                     <div class="mb-3">
                         <label for="categeri_name" class="col-form-label">Name:</label>

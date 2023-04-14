@@ -23,8 +23,8 @@ window.addEventListener('DOMContentLoaded', event => {
     }
 
     const datatablesSimple4 = document.getElementById('datatablesSimple4');
-    if (datatablesSimple3) {
-        new simpleDatatables.DataTable(datatablesSimple3);
+    if (datatablesSimple4) {
+        new simpleDatatables.DataTable(datatablesSimple4);
     }
 
 

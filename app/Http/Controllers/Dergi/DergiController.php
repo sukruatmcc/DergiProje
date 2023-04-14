@@ -66,7 +66,7 @@ class DergiController extends Controller
     public function edit(string $id)
     {
         $data = Dergi::find($id);
-        return view("admin.layout.dergi.edit",compact('data'));
+        return view("admin.pages.dergi.edit",compact('data'));
     }
 
     /**

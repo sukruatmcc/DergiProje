@@ -1,6 +1,12 @@
-@extends('admin.tema')
+@extends('admin.layout.tema')
 @section('title')
-    Dergi - Categories | Admin Panel
+    Admin - Reklam Types | Admin Panel
+@endsection
+@section('css')
+@endsection
+@section('content')
+@section('title')
+    Dergi | Admin Panel
 @endsection
 @section('css')
     {{-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> --}}
@@ -14,7 +20,7 @@
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                Categories
+                                Reklamlar
                             </h1>
                         </div>
                     </div>
@@ -27,7 +33,7 @@
                 <div class="row" style="margin-top:7px; margin-left:7px">
                     <div class="col-md-4">
                         <a href="#" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#ModalCreateCategories"><i class="fa-solid fa-circle-plus"></i>Add Categories<a>
+                            data-bs-target="#ModalCreateReklam"><i class="fa-solid fa-circle-plus"></i>Add Reklam Type<a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -36,7 +42,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Color</th>
+                                <th>Info</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -45,7 +51,7 @@
                             <tr>
                                 <th>#</th>
                                 <th>Name</th>
-                                <th>Color</th>
+                                <th>Info</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -54,8 +60,8 @@
                             @foreach ($data as $row)
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $row->categeri_name }}</td>
-                                    <td>{{ $row->categeri_color }}</td>
+                                    <td>{{ $row->reklam_type_name }}</td>
+                                    <td>{{ $row->reklam_type_info }}</td>
                                     <td>
                                         @if ($row->status == 'Active')
                                             <button data-action="" data-id="{{ $row->id }}" href="javascript:void(0)"
@@ -67,11 +73,10 @@
                                     </td>
                                     <td>
                                         <button style="color:blue; background:none; border:none;" type="button"
-                                            class="delete" data-action="{{ route('AdminCategories.destroy', $row->id) }}"
-                                            data-id="{{ $row->id }}"><i class="fa fa-trash text-danger"></i></button>
-                                        <a href="{{ route('AdminCategories.edit', $row->id) }}"><i
-                                                class="fa fa-edit"></i></a>
-                                    </td>
+                                            data-action="" data-id="{{ $row->id }}" class="delete"><i
+                                                class="fa fa-trash text-danger"></i></button>
+                                        <a href=""><i class="fa fa-edit"></i></a>
+                                        <a href="#"><i class="fa-solid fa-eye"></i></a>
                                     </td>
                                 </tr>
                             @endforeach
@@ -82,10 +87,14 @@
         </div>
 
     </main>
-    @include('admin.layout.categories.create')
+    @include('admin.pages.reklam.create')
 @endsection
 @section('js')
     <script src="/admin/admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
+@endsection
+
+@endsection
+@section('js')
 @endsection

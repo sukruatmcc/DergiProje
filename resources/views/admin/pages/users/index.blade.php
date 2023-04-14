@@ -1,4 +1,4 @@
-@extends('admin.tema')
+@extends('admin.layout.tema')
 @section('title')
     Users | Admin Panel
 @endsection
@@ -34,7 +34,6 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Membership Date</th>
-                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -43,20 +42,17 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Membership Date</th>
-                                <th>Actions</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td>
-
-                                </td>
-                                </td>
-                            </tr>
+                            @foreach ($data as $row)
+                                <tr>
+                                    <td>{{ $loop->iteration }}</td>
+                                    <td>{{ $row->name }}</td>
+                                    <td>{{ $row->email }}</td>
+                                    <td>{{ \Carbon\Carbon::parse($row['created_at'])->format('m/d/Y H:i:s') }}</td>
+                                </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

@@ -1,4 +1,4 @@
-@extends('admin.tema')
+@extends('admin.layout.tema')
 @section('title')
     Firma - Edit | Admin Panel
 @endsection
@@ -33,7 +33,8 @@
             <div class="row">
                 <div class="col-xl-4">
                     <!-- Profile picture card-->
-                    <form action="{{ route('admin.firma.update', $data->id) }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ route('admin.firma.update', $data->id) }}" method="POST"
+                        enctype="multipart/form-data">
                         @csrf
                         <div class="card mb-4 mb-xl-0">
                             <div class="card-header">Logo</div>
