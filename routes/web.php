@@ -48,6 +48,7 @@ Route::prefix('admin-panel')->middleware('auth')->group(function(){
 
     //ReklamType
     Route::resource('adminreklam_type', ReklamController::class);
+    Route::post('/reklam_type/edit/{id}',[ReklamController::class,'update'])->name('admin.reklam_type.update');
     Route::post('/reklam_type/changeStatus',[ReklamController::class,'changeStatus'])->name('admin.reklam_type.changeStatus');
 });
 

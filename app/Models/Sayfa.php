@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-class Dergi extends Model
+class Sayfa extends Model
 {
     use HasFactory;
-    protected $table = "dergi";
+    protected $table = "reklam_type";
     protected $primaryKey = 'id';
     protected $guarded = [];
 
-    public function sayfaDergi()
-    {
-        return $this->belongsTo('App\Models\Sayfa','dergi_id','id');
-    }
+
 }

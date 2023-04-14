@@ -64,19 +64,22 @@
                                     <td>{{ $row->reklam_type_info }}</td>
                                     <td>
                                         @if ($row->status == 'Active')
-                                            <button data-action="" data-id="{{ $row->id }}" href="javascript:void(0)"
+                                            <button data-action="{{ route('admin.reklam_type.changeStatus', $row->id) }}"
+                                                data-id="{{ $row->id }}" href="javascript:void(0)"
                                                 class="btn btn-success btn-sm  changeStatus">Active</button>
                                         @else
-                                            <button data-action="" data-id="{{ $row->id }}" href="javascript:void(0)"
+                                            <button data-action="{{ route('admin.reklam_type.changeStatus', $row->id) }}"
+                                                data-id="{{ $row->id }}" href="javascript:void(0)"
                                                 class="btn btn-danger btn-sm changeStatus">Passive</button>
                                         @endif
                                     </td>
                                     <td>
                                         <button style="color:blue; background:none; border:none;" type="button"
-                                            data-action="" data-id="{{ $row->id }}" class="delete"><i
+                                            data-action="{{ route('adminreklam_type.destroy', $row->id) }}"
+                                            data-id="{{ $row->id }}" class="delete"><i
                                                 class="fa fa-trash text-danger"></i></button>
-                                        <a href=""><i class="fa fa-edit"></i></a>
-                                        <a href="#"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="{{ route('adminreklam_type.edit', $row->id) }}"><i
+                                                class="fa fa-edit"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

@@ -70,10 +70,12 @@
                                     <td>{{ $row->firma_gsm }}</td>
                                     <td>
                                         @if ($row->status == 'Active')
-                                            <button data-action="" data-id="{{ $row->id }}" href="javascript:void(0)"
+                                            <button data-action="{{ route('admin.firma.changeStatus', $row->id) }}"
+                                                data-id="{{ $row->id }}" href="javascript:void(0)"
                                                 class="btn btn-success btn-sm  changeStatus">Active</button>
                                         @else
-                                            <button data-action="" data-id="{{ $row->id }}" href="javascript:void(0)"
+                                            <button data-action="{{ route('admin.firma.changeStatus', $row->id) }}"
+                                                data-id="{{ $row->id }}" href="javascript:void(0)"
                                                 class="btn btn-danger btn-sm changeStatus">Passive</button>
                                         @endif
                                     </td>

@@ -18,12 +18,12 @@ class ReklamController extends Controller
         return view('admin.pages.reklam.index',compact('data'));
     }
 
-    public function changeStatusReklam(Request $request)
+    public function changeStatus(Request $request)
     {
-        $update = Reklam::find($request->id);
-        $update->status = $request->status;
-        $update->save();
-        return response()->json(['message' => "Reklam Type Status Information Updated" , "status" => "Success"]);
+       $update = Reklam::find($request->id);
+       $update->status = $request->status;
+       $update->save();
+       return response()->json(['message' => "Reklam Status Information Updated" , "status" => "Success"]);
     }
     /**
      * Show the form for creating a new resource.
@@ -49,7 +49,7 @@ class ReklamController extends Controller
         ]);
 
         alert()->success('Success','Added Reklam Type Information')->showConfirmButton('Okey', '#3085d6')->persistent(true,true);
-        return redirect()->route("AdminReklam.index");
+        return redirect()->route("adminreklam_type.index");
     }
 
     /**
@@ -65,7 +65,8 @@ class ReklamController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $data = Reklam::find($id);
+        return view('admin.pages.reklam.edit',compact('data'));
     }
 
     /**
@@ -73,7 +74,12 @@ class ReklamController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        Reklam::find($id)->update([
+            "reklam_type_name" => $request->dergi_name,
+            "reklam_type_info" => $request->dergi_info,
+        ]);
+        alert()->success('Success','Updated Reklam Information')->showConfirmButton('Okey', '#3085d6')->persistent(true,true);
+        return redirect()->route("adminreklam_type.index");
     }
 
     /**
@@ -81,6 +87,7 @@ class ReklamController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Reklam::find($id)->delete();
+      return response()->json(['message' => "Reklam Information Deleted" , "status" => "Success"]);
     }
 }
