@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Dergi;
 use App\Http\Requests\DergiRequest;
+use Illuminate\Support\Facades\DB;
 
 class DergiController extends Controller
 {
@@ -57,7 +58,12 @@ class DergiController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $data = DB::table('dergi')
+        ->join('sayfa','dergi.id' , '=' , 'sayfa.dergi_id')
+        ->select('dergi.dergi_name','sayfa.sayfa_name','sayfa.sayfa_order','sayfa.status')
+        ->where('dergi.id',$id)
+        ->get();
+        return $data;
     }
 
     /**

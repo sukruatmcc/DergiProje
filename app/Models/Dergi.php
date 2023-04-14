@@ -12,9 +12,4 @@ class Dergi extends Model
     protected $table = "dergi";
     protected $primaryKey = 'id';
     protected $guarded = [];
-
-    public function sayfaDergi()
-    {
-        return $this->belongsTo('App\Models\Sayfa','dergi_id','id');
-    }
 }

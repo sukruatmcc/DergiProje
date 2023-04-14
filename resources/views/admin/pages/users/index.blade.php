@@ -27,7 +27,7 @@
                 <div class="row" style="margin-top:7px; margin-left:7px">
                 </div>
                 <div class="card-body">
-                    <table id="datatablesSimple3">
+                    <table id="datatablesSimple">
                         <thead>
                             <tr>
                                 <th>#</th>

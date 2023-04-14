@@ -20,7 +20,7 @@
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                Reklamlar
+                                Reklam Types
                             </h1>
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <table id="datatablesSimple">
+                    <table id="datatablesSimple2">
                         <thead>
                             <tr>
                                 <th>#</th>

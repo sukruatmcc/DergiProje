@@ -11,6 +11,4 @@ class Sayfa extends Model
     protected $table = "reklam_type";
     protected $primaryKey = 'id';
     protected $guarded = [];
-
-
 }

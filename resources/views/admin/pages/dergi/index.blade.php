@@ -3,7 +3,6 @@
     Dergi | Admin Panel
 @endsection
 @section('css')
-    {{-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> --}}
 @endsection
 @section('content')
     <main>
@@ -28,11 +27,11 @@
                     <div class="col-md-4">
                         <a href="#" class="btn btn-primary" data-bs-toggle="modal"
                             data-bs-target="#ModalCreateDergi"><i class="fa-solid fa-circle-plus"></i>Add Dergi
-                            <a>
+                        </a>
                     </div>
                 </div>
                 <div class="card-body">
-                    <table id="datatablesSimple">
+                    <table id="datatablesSimple1">
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -77,7 +76,8 @@
                                             data-id="{{ $row->id }}" class="delete"><i
                                                 class="fa fa-trash text-danger"></i></button>
                                         <a href="{{ route('admindergi.edit', $row->id) }}"><i class="fa fa-edit"></i></a>
-                                        <a href="#"><i class="fa-solid fa-eye"></i></a>
+                                        <a href="{{ route('admindergi.show', $row->id) }}"><i
+                                                class="fa-solid fa-eye"></i></a>
                                     </td>
                                     </td>
                                 </tr>
@@ -92,7 +92,6 @@
     @include('admin.pages.dergi.create')
 @endsection
 @section('js')
-    <script src="/admin/admin.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
 @endsection

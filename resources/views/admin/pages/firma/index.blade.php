@@ -3,7 +3,6 @@
     Firma | Admin Panel
 @endsection
 @section('css')
-    {{-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> --}}
 @endsection
 @section('content')
     <main>
@@ -27,7 +26,7 @@
                 <div class="row" style="margin-top:7px; margin-left:7px">
                     <div class="col-md-4">
                         <a href="#" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#ModalCreateFirma"><i class="fa-solid fa-circle-plus"></i>Add Firma<a>
+                            data-bs-target="#ModalCreateFirma"><i class="fa-solid fa-circle-plus"></i>Add Firma</a>
                     </div>
                 </div>
                 <div class="card-body">
@@ -97,7 +96,4 @@
     @include('admin.pages.firma.create')
 @endsection
 @section('js')
-    <script src="/admin/admin.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-    </script>
 @endsection
