@@ -12,6 +12,7 @@ class AdminController extends Controller
 {
     public function index()
     {
+       // return view('admin.layout.master');
         $data = Dergi::all();
         return view("admin.pages.dergi.index",compact('data'));//dergi all
     }

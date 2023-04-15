@@ -60,11 +60,18 @@ class DergiController extends Controller
     {
         $data = DB::table('dergi')
         ->join('sayfa','dergi.id' , '=' , 'sayfa.dergi_id')
-        ->select('dergi.dergi_name','sayfa.sayfa_name','sayfa.sayfa_order','sayfa.status')
+        ->select('dergi.dergi_name','sayfa.sayfa_name','sayfa.sayfa_order','sayfa.status','dergi.id','sayfa.id')
         ->where('dergi.id',$id)
         ->get();
-       //return $data;
-       return view('admin.pages.dergi.sayfa.show',compact('data'));
+
+        $data_category = DB::table('categories')
+        ->join('sayfa','categories.id' , '=' , 'sayfa.categories_id')
+        ->select('categories.categeri_name','sayfa.sayfa_order','sayfa.status','categories.id','sayfa.id')
+        ->where('categories.id',$id)
+        ->get();
+       //return $data_categoory;
+        //return $data;
+       return view('admin.pages.dergi.sayfa.show',compact('data','data_category'));
     }
 
     /**

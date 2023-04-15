@@ -78,7 +78,7 @@ class FirmaController extends Controller
     public function edit(string $id)
     {
         $data = Firma::find($id);
-        return view('admin.layout.firma.edit',compact('data'));
+        return view('admin.pages.firma.edit',compact('data'));
     }
 
     /**

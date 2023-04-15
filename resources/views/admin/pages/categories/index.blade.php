@@ -1,4 +1,4 @@
-@extends('admin.layout.tema')
+@extends('admin.layout.master')
 @section('title')
     Dergi - Categories | Admin Panel
 @endsection
@@ -87,7 +87,4 @@
     @include('admin.pages.categories.create')
 @endsection
 @section('js')
-    <script src="/admin/admin.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-    </script>
 @endsection

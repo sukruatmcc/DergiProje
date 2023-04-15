@@ -1,4 +1,4 @@
-@extends('admin.layout.tema')
+@extends('admin.layout.master')
 @section('title')
     Firma | Admin Panel
 @endsection
@@ -51,6 +51,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>GSM</th>
+                                <th>Reklam Hakları</th>
                                 <th>Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -67,6 +68,10 @@
                                     <td>{{ $row->firma_name }}</td>
                                     <td>{{ $row->firma_mail }}</td>
                                     <td>{{ $row->firma_gsm }}</td>
+                                    <td>
+                                        <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal"
+                                            data-bs-target="#ModalFirmaReklamHaklari">Reklam Hakları</button>
+                                    </td>
                                     <td>
                                         @if ($row->status == 'Active')
                                             <button data-action="{{ route('admin.firma.changeStatus', $row->id) }}"
@@ -94,6 +99,7 @@
 
     </main>
     @include('admin.pages.firma.create')
+    @include('admin.pages.firma.reklam.reklam_haklari')
 @endsection
 @section('js')
 @endsection

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Dergi\DergiController;
+use App\Http\Controllers\Dergi\SayfaController;
 use App\Http\Controllers\Firma\FirmaController;
 use App\Http\Controllers\Categories\CategoriesController;
 use App\Http\Controllers\Users\UsersController;
@@ -29,25 +30,28 @@ Route::prefix('admin-panel')->middleware('auth')->group(function(){
     Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index']);
 
     //Dergi
-    Route::resource('admindergi',DergiController::class);
+    Route::resource('adminDergi',DergiController::class);
     Route::post('/dergi/edit/{id}',[DergiController::class,'update'])->name('admin.dergi.update');
     Route::post('/dergi/changeStatus',[DergiController::class,'changeStatus'])->name('admin.dergi.changeStatus');
 
+    //Sayfa
+    Route::post('/sayfa/changeStatus',[SayfaController::class,'changeStatus'])->name('admin.sayfa.changeStatus');
+
     //Firma
-    Route::resource('adminfirma',FirmaController::class);
+    Route::resource('adminFirma',FirmaController::class);
     Route::post('/firma/edit/{id}',[FirmaController::class,'update'])->name('admin.firma.update');
     Route::post('/firma/changeStatus',[FirmaController::class,'changeStatus'])->name('admin.firma.changeStatus');
 
     //Categories
-    Route::resource('admincategories',CategoriesController::class);
+    Route::resource('adminCategories',CategoriesController::class);
     Route::post('/category/edit/{id}',[CategoriesController::class,'update'])->name('admin.categories.update');
     Route::post('/category/changeStatus',[CategoriesController::class,'changeStatus'])->name('admin.category.changeStatus');
 
     //Users
-    Route::resource('adminusers',UsersController::class);
+    Route::resource('adminUsers',UsersController::class);
 
     //ReklamType
-    Route::resource('adminreklam_type', ReklamController::class);
+    Route::resource('adminReklam_type', ReklamController::class);
     Route::post('/reklam_type/edit/{id}',[ReklamController::class,'update'])->name('admin.reklam_type.update');
     Route::post('/reklam_type/changeStatus',[ReklamController::class,'changeStatus'])->name('admin.reklam_type.changeStatus');
 });

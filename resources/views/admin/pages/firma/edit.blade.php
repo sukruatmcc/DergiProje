@@ -1,13 +1,8 @@
-@extends('admin.layout.tema')
+@extends('admin.layout.master')
 @section('title')
     Firma - Edit | Admin Panel
 @endsection
 @section('css')
-@endsection
-@section('content')
-    @extends('admin.tema')
-@section('title')
-    Dergi-Edit | Admin Panel
 @endsection
 @section('css')
     {{-- <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" /> --}}
@@ -21,7 +16,7 @@
                         <div class="col-auto mt-4">
                             <h1 class="page-header-title">
                                 <div class="page-header-icon"><i data-feather="filter"></i></div>
-                                Dergi | Edit
+                                Firma | Edit
                             </h1>
                         </div>
                     </div>
@@ -108,8 +103,4 @@
 @section('js')
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
     </script>
-@endsection
-
-@endsection
-@section('js')
 @endsection
