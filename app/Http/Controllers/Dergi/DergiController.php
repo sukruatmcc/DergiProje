@@ -63,7 +63,8 @@ class DergiController extends Controller
         ->select('dergi.dergi_name','sayfa.sayfa_name','sayfa.sayfa_order','sayfa.status')
         ->where('dergi.id',$id)
         ->get();
-        return $data;
+       //return $data;
+       return view('admin.pages.dergi.sayfa.show',compact('data'));
     }
 
     /**

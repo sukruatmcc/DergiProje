@@ -19,7 +19,7 @@ $(document).ready(function () {
             },
             inputPlaceholder: 'Status Select',
             showCancelButton: true,
-            confirmButtonText: 'Look up',
+            confirmButtonText: 'Approve',
             showLoaderOnConfirm: true,
             preConfirm: (login) => {
                 let status = Swal.getPopup().querySelector('.swal2-select').value;
