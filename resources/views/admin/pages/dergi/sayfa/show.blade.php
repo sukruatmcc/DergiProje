@@ -36,30 +36,30 @@
                                 @endforeach
                                 <div class="pricing-columns-price">
                                     {{ $row->sayfa_name }}
-                                    <button class="btn btn-success" type="button" data-bs-toggle="modal"
-                                        data-bs-target="#ModalSayfaIcerik">İçerik</button>
                                 </div>
                             </div>
-                            <div class="card-body p-0">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="text-primary me-2" data-feather="check-circle"></i>
-                                        1 user account
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="text-primary me-2" data-feather="check-circle"></i>
-                                        Remove ads
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="text-primary me-2" data-feather="check-circle"></i>
-                                        Premium assets
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="text-primary me-2" data-feather="check-circle"></i>
-                                        Saved projects
-                                    </li>
-                                </ul>
-                            </div>
+                            @foreach ($data_icerik as $row)
+                                <div class="card-body p-0">
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <i class="text-primary me-2" data-feather="check-circle"></i>
+                                            Remove ads
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="text-primary me-2" data-feather="check-circle"></i>
+                                            Remove ads
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="text-primary me-2" data-feather="check-circle"></i>
+                                            Premium assets
+                                        </li>
+                                        <li class="list-group-item">
+                                            <i class="text-primary me-2" data-feather="check-circle"></i>
+                                            Saved projects
+                                        </li>
+                                    </ul>
+                                </div>
+                            @endforeach
                             <a class="card-footer d-flex align-items-center justify-content-between" href="#!">
                                 Get started!
                                 <i data-feather="arrow-right"></i>

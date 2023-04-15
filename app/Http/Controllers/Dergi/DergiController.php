@@ -69,9 +69,16 @@ class DergiController extends Controller
         ->select('categories.categeri_name','sayfa.sayfa_order','sayfa.status','categories.id','sayfa.id')
         ->where('categories.id',$id)
         ->get();
+
+        $data_icerik = DB::table('sayfa')
+        ->join('icerik','sayfa.id' , '=' , 'icerik.sayfa_id')
+        ->select('sayfa.sayfa_name','icerik.icerik_title','icerik.icerik_editor','icerik.icerik_design','icerik.status','icerik.id')
+        ->where('sayfa.id',$id)
+        ->get();
+       //return $data_icerik;
        //return $data_categoory;
         //return $data;
-       return view('admin.pages.dergi.sayfa.show',compact('data','data_category'));
+       return view('admin.pages.dergi.sayfa.show',compact('data','data_category','data_icerik'));
     }
 
     /**
