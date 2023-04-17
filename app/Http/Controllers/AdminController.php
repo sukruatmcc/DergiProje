@@ -17,5 +17,13 @@ class AdminController extends Controller
         return view("admin.pages.dergi.index",compact('data'));//dergi all
     }
 
+    public function file_log(){
+        $mode = "a+";
+        $text = "\n".date("Y-m-d H:i:s")." ".$text;
+        $file_name = $name.".txt";
+        $file = fopen(__DIR__ ."/logs/$file_name", $mode);
+        fwrite($file, $text);
+        fclose($file);
+    }
 
 }

@@ -75,7 +75,12 @@ class DergiController extends Controller
         ->select('sayfa.sayfa_name','icerik.icerik_title','icerik.icerik_editor','icerik.icerik_design','icerik.status','icerik.id')
         ->where('sayfa.id',$id)
         ->get();
-       //return $data_icerik;
+     //  foreach($data_icerik as $row)
+    //   {
+     //   echo $row->icerik_title;
+     //  }
+      // exit();
+      //return $data_icerik;
        //return $data_categoory;
         //return $data;
        return view('admin.pages.dergi.sayfa.show',compact('data','data_category','data_icerik'));

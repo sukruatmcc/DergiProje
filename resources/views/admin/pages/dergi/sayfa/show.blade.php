@@ -38,28 +38,16 @@
                                     {{ $row->sayfa_name }}
                                 </div>
                             </div>
-                            @foreach ($data_icerik as $row)
-                                <div class="card-body p-0">
-                                    <ul class="list-group list-group-flush">
+                            <div class="card-body p-0">
+                                <ul class="list-group list-group-flush">
+                                    @foreach ($data_icerik as $row)
                                         <li class="list-group-item">
                                             <i class="text-primary me-2" data-feather="check-circle"></i>
-                                            Remove ads
+                                            {{ $row->icerik_title }}
                                         </li>
-                                        <li class="list-group-item">
-                                            <i class="text-primary me-2" data-feather="check-circle"></i>
-                                            Remove ads
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="text-primary me-2" data-feather="check-circle"></i>
-                                            Premium assets
-                                        </li>
-                                        <li class="list-group-item">
-                                            <i class="text-primary me-2" data-feather="check-circle"></i>
-                                            Saved projects
-                                        </li>
-                                    </ul>
-                                </div>
-                            @endforeach
+                                    @endforeach
+                                </ul>
+                            </div>
                             <a class="card-footer d-flex align-items-center justify-content-between" href="#!">
                                 Get started!
                                 <i data-feather="arrow-right"></i>
